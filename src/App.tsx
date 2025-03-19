@@ -31,7 +31,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <p>Team Members: Samantha Paez, Jackson Singley, Nolan Keefe, Diego Quijada</p>
+        <p>Team Members: Samantha Paez, Jackson Singley, Nolan Keefe, Diego Quijada aka shmunkdd</p>
         <a
           className="App-link"
           href="https://reactjs.org"
