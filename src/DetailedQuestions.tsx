@@ -3,10 +3,10 @@ import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 
-export const BasicQuestions = () => {
+export const DetailedQuestions = () => {
     return (
         <div>
-            <header>Basic Questions</header>
+            <header>Detailed Questions</header>
         </div>
     );
 }
