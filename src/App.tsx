@@ -27,26 +27,22 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>Team Members: Samantha Paez, Jackson Singley, Nolan Keefe, Diego Quijada aka shmunkdd</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Welcome to starterHelpi
       </header>
-      <Form>
+      <div className="Body">
+        <Button className="Buttons">Basic Questions</Button>
+        <br></br>
+        <Button className="Buttons">Detailed Questions</Button>
+      </div>
+      <footer>
+        <p>Team Members: Samantha Paez, Jackson Singley, Nolan Keefe, and Diego Quijada</p>
+        <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
         <br></br>
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
+      </footer>
     </div>
   );
 }
