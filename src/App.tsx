@@ -1,6 +1,10 @@
+// I used https://www.geeksforgeeks.org/how-to-redirect-to-another-page-in-reactjs/ for reference on how the router stuff works
+
 import React, { useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { Home } from './Home';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -29,9 +33,14 @@ function App() {
         Welcome to starterHelpi
       </header>
       <div className="Body">
-        <Button className="Buttons">Basic Questions</Button>
-        <br></br>
-        <Button className="Buttons">Detailed Questions</Button>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />}/> 
+            {
+              /*Using path="/" sets the default path to the Home page*/
+            }
+          </Routes>
+        </Router>
       </div>
       <footer>
         <p>Team Members: Samantha Paez, Jackson Singley, Nolan Keefe, and Diego Quijada</p>
