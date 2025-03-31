@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/starterHelpiClone/static/css/main.f855e6bc.css",
-    "main.js": "/starterHelpiClone/static/js/main.c3810bd0.js",
+    "main.css": "/starterHelpiClone/static/css/main.88271b80.css",
+    "main.js": "/starterHelpiClone/static/js/main.14508e5e.js",
     "static/js/453.bad6c33a.chunk.js": "/starterHelpiClone/static/js/453.bad6c33a.chunk.js",
-    "static/media/logo.svg": "/starterHelpiClone/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/starterHelpiClone/index.html",
-    "main.f855e6bc.css.map": "/starterHelpiClone/static/css/main.f855e6bc.css.map",
-    "main.c3810bd0.js.map": "/starterHelpiClone/static/js/main.c3810bd0.js.map",
+    "main.88271b80.css.map": "/starterHelpiClone/static/css/main.88271b80.css.map",
+    "main.14508e5e.js.map": "/starterHelpiClone/static/js/main.14508e5e.js.map",
     "453.bad6c33a.chunk.js.map": "/starterHelpiClone/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.c3810bd0.js"
+    "static/css/main.88271b80.css",
+    "static/js/main.14508e5e.js"
   ]
 }
