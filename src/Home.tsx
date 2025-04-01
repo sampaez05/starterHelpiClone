@@ -1,8 +1,9 @@
+
 import './App.css';
 import { Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 
-export const Home = () => {
+export function Home () {
     return (
         <div>
             <header>Home Page</header>
@@ -14,3 +15,4 @@ export const Home = () => {
         </div>
     );
 }
+export default Home;
