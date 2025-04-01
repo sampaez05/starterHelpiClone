@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom'
-import  {Home}  from "./Home";
+import  Home  from "./Home";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -35,7 +35,7 @@ function App() {
       <div className="Body">
         <Router>
           <Routes>
-            <Route path="/" element={Home()}/> 
+            <Route path="/" element={<Home />}/> 
             {
               /*Using path="/" sets the default path to the Home page*/
             }

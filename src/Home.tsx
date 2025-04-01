@@ -3,7 +3,7 @@ import './App.css';
 import { Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 
-export function Home () {
+const Home = () => {
     return (
         <div>
             <header>Home Page</header>
