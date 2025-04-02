@@ -31,6 +31,7 @@ FAIL src/App.test.tsx
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
 All files              |       0 |        0 |       0 |       0 |                   
+ AI-code.js            |       0 |        0 |       0 |       0 | 6-43              
  App.tsx               |       0 |        0 |       0 |       0 | 12-32             
  BasicQuestions.tsx    |       0 |      100 |       0 |       0 | 6-7               
  DetailedQuestions.tsx |       0 |      100 |       0 |       0 | 6-7               
@@ -41,7 +42,7 @@ All files              |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        2.797 s
+Time:        2.875 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
