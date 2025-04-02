@@ -1,7 +1,12 @@
+// I used https://www.geeksforgeeks.org/how-to-redirect-to-another-page-in-reactjs/ for reference on how the router stuff works
+
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
+import {HashRouter as Router, Routes, Route} from 'react-router-dom'
+import  Home  from "./Home";
+import { BasicQuestions } from './BasicQuestions';
+import { DetailedQuestions } from './DetailedQuestions';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -27,26 +32,29 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>Team Members: Samantha Paez, Jackson Singley, Nolan Keefe, Diego Quijada</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Welcome to starterHelpi
       </header>
-      <Form>
+      <div className="Body">
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />}/> 
+            {
+              /*Using path="/" sets the default path to the Home page*/
+            }
+          <Route path="/BasicQuestions" element={<BasicQuestions />} />
+          <Route path="/DetailedQuestions" element={<DetailedQuestions />} />
+          </Routes>
+        </Router>
+      </div>
+      <footer>
+        <p>Team Members: Samantha Paez, Jackson Singley, Nolan Keefe, and Diego Quijada</p>
+        <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
         <br></br>
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
+      </footer>
     </div>
   );
 }
