@@ -5,6 +5,8 @@ import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom'
 import  Home  from "./Home";
+import { BasicQuestions } from './BasicQuestions';
+import { DetailedQuestions } from './DetailedQuestions';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -39,6 +41,8 @@ function App() {
             {
               /*Using path="/" sets the default path to the Home page*/
             }
+          <Route path="/BasicQuestions" element={<BasicQuestions />} />
+          <Route path="/DetailedQuestions" element={<DetailedQuestions />} />
           </Routes>
         </Router>
       </div>
