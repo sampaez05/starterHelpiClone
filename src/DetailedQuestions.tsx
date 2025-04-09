@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './App.css';
 import { Button, Container} from 'react-bootstrap';
 import { MultipleChoiceQuestion } from './QuestionFormat';
+import { ProgBar } from './progressBar';
 import { useState } from 'react';
 
 export const DetailedQuestions = () => {
@@ -77,6 +78,10 @@ export const DetailedQuestions = () => {
                 <Button>Submit</Button>:
                 <Button disabled = {!allAnswered}>Answer all Questions</Button>}
             </div>
+            <p>The Detailed asic Career assesment asks a few simple questions, please select the answer you most feel fits.
+                At the end of the assesment we will give you a general idea of possible jobs
+            </p>
+            <ProgBar/>
         </div>
     );
 }

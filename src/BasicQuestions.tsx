@@ -1,10 +1,10 @@
 
 import { Link } from 'react-router-dom';
 import './App.css';
-
-import { Button, Container} from 'react-bootstrap';
-import { MultipleChoiceQuestion } from './QuestionFormat';
+import { Button, Container, ProgressBar } from 'react-bootstrap';
+import {ProgBar} from './progressBar';
 import { useState } from 'react';
+import { MultipleChoiceQuestion } from './QuestionFormat';
 
 export const BasicQuestions = () => {
     const questions = [//An array of questions built of the question and the possible answers
@@ -78,6 +78,7 @@ export const BasicQuestions = () => {
                 <Button>Submit</Button>:
                 <Button disabled = {!allAnswered}>Answer all Questions</Button>}
             </div>
+            <ProgBar/>
         </div>
     );
 }
