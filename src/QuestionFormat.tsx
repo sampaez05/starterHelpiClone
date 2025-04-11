@@ -3,15 +3,14 @@ import { Form } from "react-bootstrap";
 
 export function MultipleChoiceQuestion({
     options,
-    expectedAnswer,
     question
 }: {
     options: string[];
-    expectedAnswer: string;
     question:string;
     selected:string;
 }): React.JSX.Element {
-    const [Answer, setAnswer] = useState<string>(options[0]);
+    const [Answer, setAnswer] = useState<string>('');
+    const [responded, setResponse] = useState<boolean>(false);
 
     return (
         <div>
@@ -29,6 +28,7 @@ export function MultipleChoiceQuestion({
                             checked={Answer === option}
                             onChange={() => {
                                 setAnswer(option);
+                                setResponse(true);
                             }}
                             style={{ marginRight: "5px" }}
                         />
@@ -36,7 +36,6 @@ export function MultipleChoiceQuestion({
                     </label>
                 ))}
             </Form.Group>
-            <div>{Answer === expectedAnswer ? "✔️" : "❌"}.</div>
         </div>
     );
 }

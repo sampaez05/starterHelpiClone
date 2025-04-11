@@ -17,14 +17,12 @@ export const BasicQuestions = () => {
                 textAlign: 'center'}}>
                 Basic Career assesment
                 <MultipleChoiceQuestion
-                expectedAnswer="2"
                 question = "what number is so dang cool"
                 selected = ""
                 options={["1", "2", "3"]
                 }
             />
             <MultipleChoiceQuestion
-                expectedAnswer="6"
                 question = "what number is so dang EEVIL"
                 selected = ""
                 options={["6", "5", "4"]
