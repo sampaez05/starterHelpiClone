@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
+import { Route, Router, Routes } from 'react-router-dom';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -30,6 +31,16 @@ function App() {
       </header>
       <div className="Body">
         <div className="basic">
+          <Router>
+            <Routes>
+             <Route path="/" element={<Home />}/> 
+              {
+                /*Using path="/" sets the default path to the Home page*/
+              }
+            <Route path="/BasicQuestions" element={<BasicQuestions />} />
+            <Route path="/DetailedQuestions" element={<DetailedQuestions />} />
+            </Routes>
+          </Router>
         </div>
       </div>
       <footer className="App-footer">
