@@ -30,12 +30,6 @@ function App() {
       </header>
       <div className="Body">
         <div className="basic">
-          <Button className="Buttons">Basic Questions</Button>
-          <p>This is a 10 question multiple choice survey</p>
-        </div>
-        <div className='detailed'>
-          <Button className="Buttons">Detailed Questions</Button>
-          <p>This is a 10 question short answer survey</p>
         </div>
       </div>
       <footer className="App-footer">
