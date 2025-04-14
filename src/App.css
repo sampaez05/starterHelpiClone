@@ -61,16 +61,13 @@
 
 .nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: right;
   padding: 5px;
-  font-size: 20px;
-  font-weight: normal;
+  font-size: smaller;
 }
 
-.nav li{
+.nav {
   display: flex;
-  list-style: none;
 }
 
 .nav a{

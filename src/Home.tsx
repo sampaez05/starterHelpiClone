@@ -5,10 +5,8 @@ import {Link} from 'react-router-dom'
 
 const Home = () => {
     return (
-        <div>
-            <header>Home Page
-            </header>
-            <div>
+        <div className='App'>
+            <div className='Body'>
                 <Link to="/BasicQuestions"><Button className="Buttons">Basic Questions</Button></Link>
                 <br></br>
                 <Link to="/DetailedQuestions"><Button className="Buttons">Detailed Questions</Button></Link>
