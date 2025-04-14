@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-import { Route, Router, Routes } from 'react-router-dom';
+import {HashRouter as Router, Routes, Route} from 'react-router-dom'
+import  Home  from "./Home";
+import { BasicQuestions } from './BasicQuestions';
+import { DetailedQuestions } from './DetailedQuestions';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
