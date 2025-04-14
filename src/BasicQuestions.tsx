@@ -6,9 +6,12 @@ import { MultipleChoiceQuestion } from './QuestionFormat';
 
 export const BasicQuestions = () => {
     const questions = [
-        "What is your name?",
-        "What is your favorite color?",
-        "What is the airspeed velocity of an unladen swallow?",
+        {question: "Where would you like to be when doing your job",
+          options: ["Indoor", "Outdoor", "A mix of both", "No preference"]},
+        {question: "How much do you want to work per week?",
+          options: ["40+ Hours a week", "30-40 hours", "20-30 hours", "No Preference"]},
+        {question: "How do you feel about travelling for work?",
+          options: ["I want to travel all the time", "I'd be okay with it sometimes", "Only if I absolutely need to"]}
       ];
     return (
         <div>
@@ -21,18 +24,14 @@ export const BasicQuestions = () => {
                  width: '200px',
                 textAlign: 'center'}}>
                 Basic Career assesment
+                {questions.map((q, index) => (
                 <MultipleChoiceQuestion
-                question = "what number is so dang cool"
-                selected = ""
-                options={["1", "2", "3"]
-                }
-            />
-            <MultipleChoiceQuestion
-                question = "what number is so dang EEVIL"
-                selected = ""
-                options={["6", "5", "4"]
-                }
-            />
+                  key={index}
+                  question={q.question}
+                  selected= ""
+                  options={q.options}
+                />
+              ))}
             </Container>
             <p>The Basic Career assesment asks a few simple questions, please select the answer you most feel fits.
             </p>
