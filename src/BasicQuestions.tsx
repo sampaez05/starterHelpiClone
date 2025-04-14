@@ -7,16 +7,15 @@ import { useState } from 'react';
 import { MultipleChoiceQuestion } from './QuestionFormat';
 
 export const BasicQuestions = () => {
-    const questions = [//An array of questions built of the question and the possible answers
-        {
-            question: "what number is so dang cool",
-            options: ["1", "2", "3"]
-        },
-        {
-            question: "what number is so dang EEVIL",
-            options: ["6", "5", "4"]
-        }
-    ];
+    const questions = [
+        {question: "Where would you like to be when doing your job",
+          options: ["Indoor", "Outdoor", "A mix of both", "No preference"]},
+        {question: "How much do you want to work per week?",
+          options: ["40+ Hours a week", "30-40 hours", "20-30 hours", "No Preference"]},
+        {question: "How do you feel about travelling for work?",
+          options: ["I want to travel all the time", "I'd be okay with it sometimes", "Only if I absolutely need to"]}
+      ];
+      const [numResponded, setNumResponded] = useState<number>(0);
     // Set up state for answers and responses dynamically
     const [questionData, setQuestionData] = useState(
         questions.map(() => ({//sets answer to empty and response state false
@@ -78,7 +77,7 @@ export const BasicQuestions = () => {
                 <Button>Submit</Button>:
                 <Button disabled = {!allAnswered}>Answer all Questions</Button>}
             </div>
-            <ProgBar/>
+            <ProgBar questionsResponded={0}/>
         </div>
     );
 }
