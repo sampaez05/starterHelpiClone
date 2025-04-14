@@ -1,10 +1,15 @@
 
 import { Link } from 'react-router-dom';
 import './App.css';
-import { Button, Container} from 'react-bootstrap';
+import { Form, Button, Container} from 'react-bootstrap';
 import { MultipleChoiceQuestion } from './QuestionFormat';
 
 export const BasicQuestions = () => {
+    const questions = [
+        "What is your name?",
+        "What is your favorite color?",
+        "What is the airspeed velocity of an unladen swallow?",
+      ];
     return (
         <div>
             <header>Basic Questions
