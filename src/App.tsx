@@ -29,17 +29,22 @@ function App() {
         Welcome to starterHelpi
       </header>
       <div className="Body">
-        <Button className="Buttons">Basic Questions</Button>
-        <br></br>
-        <Button className="Buttons">Detailed Questions</Button>
+        <div className="basic">
+          <Button className="Buttons">Basic Questions</Button>
+          <p>This is a 10 question multiple choice survey</p>
+        </div>
+        <div className='detailed'>
+          <Button className="Buttons">Detailed Questions</Button>
+          <p>This is a 10 question short answer survey</p>
+        </div>
       </div>
-      <footer>
+      <footer className="App-footer">
         <p>Team Members: Samantha Paez, Jackson Singley, Nolan Keefe, and Diego Quijada</p>
         <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
         <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+        <Button className="Buttons" onClick={handleSubmit}>Submit</Button>
       </Form>
       </footer>
     </div>
