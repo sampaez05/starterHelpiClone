@@ -15,7 +15,7 @@ export function MultipleChoiceQuestion({
     return (
         <div>
             <h3>{question}</h3>
-            <Form.Group controlId="userEmotions">
+            <Form.Group controlId="multipleChoiceQuestions">
                 {/* <Form.Label>{question}</Form.Label> */}
                 {options.map((option) => (
                     <label
