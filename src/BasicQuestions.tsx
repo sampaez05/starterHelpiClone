@@ -1,7 +1,8 @@
 
 import { Link } from 'react-router-dom';
 import './App.css';
-import { Form, Button, Container } from 'react-bootstrap';
+import { Form, Button, Container} from 'react-bootstrap';
+import { MultipleChoiceQuestion } from './QuestionFormat';
 
 export const BasicQuestions = () => {
     const questions = [
@@ -13,24 +14,28 @@ export const BasicQuestions = () => {
         <div>
             <header>Basic Questions
             <Link to="/"><Button className="Buttons">Home</Button></Link></header>
-            <Container>
+            <Container style={{
+                 border: '2px solid black',
+                 padding: '10px',
+                 borderRadius: '5px',
+                 width: '200px',
+                textAlign: 'center'}}>
                 Basic Career assesment
+                <MultipleChoiceQuestion
+                question = "what number is so dang cool"
+                selected = ""
+                options={["1", "2", "3"]
+                }
+            />
+            <MultipleChoiceQuestion
+                question = "what number is so dang EEVIL"
+                selected = ""
+                options={["6", "5", "4"]
+                }
+            />
             </Container>
-            <p>The basic Career assesment asks a few simple questions, please select the answer you most feel fits.
-                At the end of the assesment we will give you a general idea of possible jobs
+            <p>The Basic Career assesment asks a few simple questions, please select the answer you most feel fits.
             </p>
-            <Form>
-      {questions.map((question, index) => (
-        <Form.Group key={index} className="mb-3">
-          <Form.Label>{question}</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Your answer"
-            name={`question-${index}`}
-          />
-        </Form.Group>
-      ))}
-    </Form>
         </div>
     );
 }
