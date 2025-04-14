@@ -26,34 +26,32 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="App-header">
-        Welcome to starterHelpi
-      </header>
-      <div className="Body">
-        <div className="basic">
-          <Router>
-            <Routes>
-             <Route path="/" element={<Home />}/> 
-              {
-                /*Using path="/" sets the default path to the Home page*/
-              }
-            <Route path="/BasicQuestions" element={<BasicQuestions />} />
-            <Route path="/DetailedQuestions" element={<DetailedQuestions />} />
-            </Routes>
-          </Router>
-        </div>
-      </div>
-      <footer className="App-footer">
-        <p>Team Members: Samantha Paez, Jackson Singley, Nolan Keefe, and Diego Quijada</p>
-        <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-        <br></br>
-        <Button className="Buttons" onClick={handleSubmit}>Submit</Button>
-      </Form>
-      </footer>
+    <header className="App-header">
+      Welcome to starterHelpi
+    </header>
+    <div className="Body">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />}/> 
+          {
+            /*Using path="/" sets the default path to the Home page*/
+          }
+        <Route path="/BasicQuestions" element={<BasicQuestions />} />
+        <Route path="/DetailedQuestions" element={<DetailedQuestions />} />
+        </Routes>
+      </Router>
     </div>
-  );
+    <footer>
+      <p>Team Members: Samantha Paez, Jackson Singley, Nolan Keefe, and Diego Quijada</p>
+      <Form>
+      <Form.Label>API Key:</Form.Label>
+      <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+      <br></br>
+      <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+    </Form>
+    </footer>
+  </div>
+);
 }
 
 export default App;
