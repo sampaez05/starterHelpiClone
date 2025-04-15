@@ -92,12 +92,49 @@
   color: #333D51
 }
 
+.Buttons:disabled {
+  background-color: #c9cbcf;
+  color: black;
+}
+
 .prog-bar .progress-bar{
   background-color: #D3AC2B;
 }
 
 .progress-container {
   padding:10px;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #F4F3EA;
+    padding: 30px;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width: 400px;
+}
+
+.popup-button {
+  font-family: Arial, Helvetica, sans-serif;
+  border:0px;
+  background-color: #F4F3EA;
+  color: #333D51;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.popup-button:hover {
+  background-color: #D3AC2B;
+  color: #333D51
+}
+.popup-button:active {
+  background-color: #D3AC2B;
+  color: #333D51
 }
 
 @keyframes App-logo-spin {
