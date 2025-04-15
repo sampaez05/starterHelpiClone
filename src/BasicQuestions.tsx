@@ -15,8 +15,6 @@ export const BasicQuestions = () => {
         {question: "How do you feel about travelling for work?",
           options: ["I want to travel all the time", "I'd be okay with it sometimes", "Only if I absolutely need to"]},
         {question: "How much socializing do you want to do with coworkers",
-          options: []},
-        {question: "How do you feel about self-employment?",
           options: ["I’d like to spend lots of time with coworkers","I’d be okay spending time with coworkers","I’d accept interacting with people occasionally","I’d rather die than see another person’s face"]},
         {question: "How do you feel about self-employment?",
           options: ["I only want to work for myself","I’d prefer to work for myself","I’d prefer to work for someone else","I only want to work for someone else"]},
