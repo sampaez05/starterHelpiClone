@@ -21,11 +21,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 30px;
+
+  font-size: calc(10px + 2vmin);
   color: #D3AC2B;
   margin-bottom:10px;
   font-family: "Garamond", Times, serif;
-  font-weight: bold;
   height:25vh;
 }
 
