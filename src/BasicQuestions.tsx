@@ -18,7 +18,6 @@ export const BasicQuestions = () => {
             options: ["6", "5", "4"]
         }
     ];
-
     // Set up state for answers and responses dynamically
     const [questionData, setQuestionData] = useState(
         questions.map(() => ({
@@ -26,6 +25,8 @@ export const BasicQuestions = () => {
             responded: false
         }))
     );
+    const allAnswered = questionData.every(q => q.responded);
+
     const updateAnswer = (index: number, answer: string) => {
         const updated = [...questionData];
         updated[index] = {
@@ -34,6 +35,14 @@ export const BasicQuestions = () => {
         };
         setQuestionData(updated);
     };
+    const clearAnswer = ()=>{
+        setQuestionData(
+            questions.map(() => ({
+                answer: '',
+                responded: false
+            }))
+        );
+    }
     return (
         <div>
             <header>
@@ -62,6 +71,11 @@ export const BasicQuestions = () => {
             </Container>
             <p>The Basic Career assesment asks a few simple questions, please select the answer you most feel fits.
             </p>
+            <div>
+                <Button onClick = {clearAnswer}>Clear</Button>
+                <span>  </span>
+                <Button disabled = {!allAnswered}>Submit</Button>
+            </div>
         </div>
     );
 }

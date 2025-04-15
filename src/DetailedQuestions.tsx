@@ -24,6 +24,8 @@ export const DetailedQuestions = () => {
             responded: false
         }))
     );
+    const allAnswered = questionData.every(q => q.responded);
+
     const updateAnswer = (index: number, answer: string) => {
         const updated = [...questionData];
         updated[index] = {
@@ -32,6 +34,14 @@ export const DetailedQuestions = () => {
         };
         setQuestionData(updated);
     };
+    const clearAnswer = ()=>{
+        setQuestionData(
+            questions.map(() => ({
+                answer: '',
+                responded: false
+            }))
+        );
+    }
     return (
         <div>
             <header>
@@ -45,8 +55,7 @@ export const DetailedQuestions = () => {
                  width: '200px',
                 textAlign: 'center'
             }}>
-                Basic Career assesment
-              
+                Detailed Career assesment
                 {questions.map((q, index) => (
                     <MultipleChoiceQuestion
                         key={index}
@@ -61,6 +70,11 @@ export const DetailedQuestions = () => {
             <p>The Detailed asic Career assesment asks a few simple questions, please select the answer you most feel fits.
                 At the end of the assesment we will give you a general idea of possible jobs
             </p>
+            <div>
+                <Button onClick = {clearAnswer}>Clear</Button>
+                <span>  </span>
+                <Button disabled = {!allAnswered}>Submit</Button>
+            </div>
         </div>
     );
 }
