@@ -66,8 +66,9 @@
   font-size: smaller;
 }
 
-.nav {
+.nav li{
   display: flex;
+  list-style: none;
 }
 
 .nav a{
@@ -89,6 +90,14 @@
 .Buttons:active {
   background-color: #D3AC2B;
   color: #333D51
+}
+
+.prog-bar .progress-bar{
+  background-color: #D3AC2B;
+}
+
+.progress-container {
+  padding:10px;
 }
 
 @keyframes App-logo-spin {

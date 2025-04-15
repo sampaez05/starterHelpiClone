@@ -17,6 +17,8 @@ export const DetailedQuestions = () => {
         }
     ];
 
+    const [numResponded, setNumResponded] = useState<number>(0); //state for how many questions have been responded to
+
     // Set up state for answers and responses dynamically
     const [questionData, setQuestionData] = useState(
         questions.map(() => ({//sets answer to empty and response state false
@@ -33,6 +35,11 @@ export const DetailedQuestions = () => {
             responded: true
         };
         setQuestionData(updated);//sets the question data to the new
+
+        //finds how many questions have been responded to and set the proper state to this value
+        const respondedQuestions = updated.filter(q=>q.responded)
+        console.log(respondedQuestions.length);
+        setNumResponded(respondedQuestions.length);
     };
     const clearAnswer = ()=>{//resets question answer state to empty
         setQuestionData(
@@ -41,12 +48,14 @@ export const DetailedQuestions = () => {
                 responded: false
             }))
         );
+
+        setNumResponded(0); //resets the numResponded state to 0
     }
     return (
         <div>
             <header>
                 Detailed Questions
-                <Link to="/"><Button className="Buttons">Home</Button></Link>
+                <ProgBar questionsResponded={numResponded} numberOfQs={questions.length}/>
             </header>
             <Container style={{
                  border: '2px solid black',
@@ -78,10 +87,6 @@ export const DetailedQuestions = () => {
                 <Button>Submit</Button>:
                 <Button disabled = {!allAnswered}>Answer all Questions</Button>}
             </div>
-            <p>The Detailed asic Career assesment asks a few simple questions, please select the answer you most feel fits.
-                At the end of the assesment we will give you a general idea of possible jobs
-            </p>
-            {<ProgBar questionsResponded={0}/>}
         </div>
     );
 }
