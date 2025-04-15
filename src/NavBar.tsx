@@ -1,10 +1,5 @@
-import { useState } from 'react';
 import './App.css';
-import { Button, ProgressBar } from 'react-bootstrap';
-import { Link, NavLink, Route, HashRouter as Router, Routes } from 'react-router-dom';
-import { BasicQuestions } from './BasicQuestions';
-import { DetailedQuestions } from './DetailedQuestions';
-import Home from './Home';
+import {  NavLink} from 'react-router-dom';
 
 export const NavBar = () => {
     return (
@@ -13,7 +8,6 @@ export const NavBar = () => {
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/BasicQuestions">Basic Questions</NavLink></li>
                     <li><NavLink to="/DetailedQuestions">Detailed Questions</NavLink></li>
-                   
                 </ul>
         </nav>
     );

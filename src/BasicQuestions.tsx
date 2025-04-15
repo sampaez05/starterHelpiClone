@@ -7,8 +7,7 @@ import { MultipleChoiceQuestion } from './QuestionFormat';
 export const BasicQuestions = () => {
     return (
         <div>
-            <header>Basic Questions
-            <Link to="/"><Button className="Buttons">Home</Button></Link></header>
+            <header>Basic Questions</header>
             <Container style={{
                  border: '2px solid black',
                  padding: '10px',

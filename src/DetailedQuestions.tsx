@@ -6,10 +6,7 @@ import { Button, Container } from 'react-bootstrap';
 export const DetailedQuestions = () => {
     return (
         <div>
-            <header>Detailed Questions 
-                <br></br>
-                <Link to="/"><Button className="Buttons">Home</Button></Link>
-            </header>
+            <header>Detailed Questions</header>
             <Container>
                 Detailed Career Assesment
             </Container>
