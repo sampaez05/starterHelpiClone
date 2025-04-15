@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import './App.css';
 import { Button, Container} from 'react-bootstrap';
 import { MultipleChoiceQuestion } from './QuestionFormat';
+import { ProgBar } from './progressBar';
 import { useState } from 'react';
 
 export const DetailedQuestions = () => {
@@ -15,6 +15,8 @@ export const DetailedQuestions = () => {
             options: ["6", "5", "4"]
         }
     ];
+
+    const [numResponded, setNumResponded] = useState<number>(0); //state for how many questions have been responded to
 
     // Set up state for answers and responses dynamically
     const [questionData, setQuestionData] = useState(
@@ -32,6 +34,11 @@ export const DetailedQuestions = () => {
             responded: true
         };
         setQuestionData(updated);//sets the question data to the new
+
+        //finds how many questions have been responded to and set the proper state to this value
+        const respondedQuestions = updated.filter(q=>q.responded)
+        console.log(respondedQuestions.length);
+        setNumResponded(respondedQuestions.length);
     };
     const clearAnswer = ()=>{//resets question answer state to empty
         setQuestionData(
@@ -40,12 +47,14 @@ export const DetailedQuestions = () => {
                 responded: false
             }))
         );
+
+        setNumResponded(0); //resets the numResponded state to 0
     }
     return (
         <div>
             <header>
                 Detailed Questions
-                <Link to="/"><Button className="Buttons">Home</Button></Link>
+                <ProgBar questionsResponded={numResponded} numberOfQs={questions.length}/>
             </header>
             <Container style={{
                  border: '2px solid black',
