@@ -2,7 +2,6 @@
 import './App.css';
 import { Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
-import { NavBar } from './NavBar';
 
 const Home = () => {
     return (

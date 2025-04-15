@@ -3,11 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Route, HashRouter as Router, Routes } from 'react-router-dom';
-import { BasicQuestions } from './BasicQuestions';
-import { DetailedQuestions } from './DetailedQuestions';
-import Home from './Home';
-import { NavBar } from './NavBar';
+import { HashRouter as Router} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
