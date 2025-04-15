@@ -3,19 +3,19 @@ import { Form } from "react-bootstrap";
 
 export function MultipleChoiceQuestion({
     options,
-    question
+    question,
+    selected,
+    setSelected,
 }: {
     options: string[];
     question:string;
     selected:string;
+    setSelected: (answer:string)=> void;
 }): React.JSX.Element {
-    const [Answer, setAnswer] = useState<string>('');
-    const [responded, setResponse] = useState<boolean>(false);
-
     return (
         <div>
             <h3>{question}</h3>
-            <Form.Group controlId="userEmotions">
+            <Form.Group controlId="multipleChoiceQuestions">
                 {/* <Form.Label>{question}</Form.Label> */}
                 {options.map((option) => (
                     <label
@@ -25,10 +25,8 @@ export function MultipleChoiceQuestion({
                             type="radio"
                             name={question}
                             value={option}
-                            checked={Answer === option}
-                            onChange={() => {
-                                setAnswer(option);
-                                setResponse(true);
+                            checked={selected === option}
+                            onChange={() => { setSelected(option)
                             }}
                             style={{ marginRight: "5px" }}
                         />
