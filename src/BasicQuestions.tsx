@@ -7,8 +7,7 @@ import { MultipleChoiceQuestion } from './QuestionFormat';
 import { useState } from 'react';
 
 export const BasicQuestions = () => {
-    const questions = [
-
+    const questions = [//An array of questions built of the question and the possible answers
         {
             question: "what number is so dang cool",
             options: ["1", "2", "3"]
@@ -18,22 +17,31 @@ export const BasicQuestions = () => {
             options: ["6", "5", "4"]
         }
     ];
-
     // Set up state for answers and responses dynamically
     const [questionData, setQuestionData] = useState(
-        questions.map(() => ({
+        questions.map(() => ({//sets answer to empty and response state false
             answer: '',
             responded: false
         }))
     );
-    const updateAnswer = (index: number, answer: string) => {
+    const allAnswered = questionData.every(q => q.responded);//A value that checks for if all questions on page answered
+
+    const updateAnswer = (index: number, answer: string) => {//Updates the answer and sets the responded state to true
         const updated = [...questionData];
         updated[index] = {
             answer,
             responded: true
         };
-        setQuestionData(updated);
+        setQuestionData(updated);//sets the question data to the new
     };
+    const clearAnswer = ()=>{//resets question answer state to empty
+        setQuestionData(
+            questions.map(() => ({
+                answer: '',
+                responded: false
+            }))
+        );
+    }
     return (
         <div>
             <header>
@@ -48,21 +56,28 @@ export const BasicQuestions = () => {
                 textAlign: 'center'
             }}>
                 Basic Career assesment
-              
                 {questions.map((q, index) => (
-                    <MultipleChoiceQuestion
+                    //Runs through the questions array and sends info to question format
+                    <MultipleChoiceQuestion 
                         key={index}
                         question={q.question}
                         options={q.options}
                         selected={questionData[index].answer}
-                        setSelected={(a) => updateAnswer(index, a)}
+                        setSelected={(a) => updateAnswer(index, a)}//changes on radio button click
                     />
                 ))}
 
             </Container>
             <p>The Basic Career assesment asks a few simple questions, please select the answer you most feel fits.
+                At the end of the assesment we will give you a general idea of possible jobs
             </p>
+            <div>
+                <Button onClick = {clearAnswer}>Clear</Button>{/* button that calls the clear answer function*/}
+                <span>  </span>{/* below shows submit button if all answered and an answer all questions button otherwise */}
+                {allAnswered? 
+                <Button>Submit</Button>:
+                <Button disabled = {!allAnswered}>Answer all Questions</Button>}
+            </div>
         </div>
     );
 }
-

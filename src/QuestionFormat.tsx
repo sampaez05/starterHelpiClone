@@ -5,7 +5,7 @@ export function MultipleChoiceQuestion({
     options,
     question,
     selected,
-    setSelected,
+    setSelected,//all the data sent in
 }: {
     options: string[];
     question:string;
@@ -16,10 +16,9 @@ export function MultipleChoiceQuestion({
         <div>
             <h3>{question}</h3>
             <Form.Group controlId="multipleChoiceQuestions">
-                {/* <Form.Label>{question}</Form.Label> */}
-                {options.map((option) => (
+                {options.map((option) => (//runs through information and makes the question
                     <label
-                        key={option}
+                        key={option}//which object is it
                     >
                         <input
                             type="radio"
@@ -28,7 +27,7 @@ export function MultipleChoiceQuestion({
                             checked={selected === option}
                             onChange={() => { setSelected(option)
                             }}
-                            style={{ marginRight: "5px" }}
+                            style={{ marginRight: "5px" }}//just small visual
                         />
                         {option}
                     </label>
