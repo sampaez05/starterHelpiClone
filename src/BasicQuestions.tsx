@@ -12,7 +12,23 @@ export const BasicQuestions = () => {
         {question: "How much do you want to work per week?",
           options: ["40+ Hours a week", "30-40 hours", "20-30 hours", "No Preference"]},
         {question: "How do you feel about travelling for work?",
-          options: ["I want to travel all the time", "I'd be okay with it sometimes", "Only if I absolutely need to"]}
+          options: ["I want to travel all the time", "I'd be okay with it sometimes", "Only if I absolutely need to"]},
+        {question: "How much socializing do you want to do with coworkers",
+          options: []},
+        {question: "How do you feel about self-employment?",
+          options: ["I’d like to spend lots of time with coworkers","I’d be okay spending time with coworkers","I’d accept interacting with people occasionally","I’d rather die than see another person’s face"]},
+        {question: "How do you feel about self-employment?",
+          options: ["I only want to work for myself","I’d prefer to work for myself","I’d prefer to work for someone else","I only want to work for someone else"]},
+        {question: "What areas would you like to work in",
+        options: ["STEM","Arts","Business","Politics"]},
+        {question: "Do you want to do more physical labor or mental work",
+            options: ["I want to do mental work","I want to work with my hands","A good mix of both"]},
+            {question: "How much interaction do you want with consumers",
+                options: ["I love talking to people","Some interaction is okay","I will if I have to","I’d rather eat my own foot than talk to a stranger"]},
+                {question: "Do you prefer long-term employment or short-term contract work?",
+                    options: ["Long term is the way to go","I prefer contracted work","Either works"]},
+                    {question: "Would you like to be in a leadership position or be more boots on the ground doing the actual work",
+                        options: ["I prefer to help with the bigger picture","I prefer doing the day-to-day work","Maybe a bit of both"]},
       ];
     
     const [numResponded, setNumResponded] = useState<number>(0); //state for how many questions have been responded to
