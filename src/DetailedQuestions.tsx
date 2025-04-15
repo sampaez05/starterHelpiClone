@@ -3,6 +3,7 @@ import { Button, Container} from 'react-bootstrap';
 import { MultipleChoiceQuestion } from './QuestionFormat';
 import { ProgBar } from './progressBar';
 import { useState } from 'react';
+import { FormSubmittedPopup } from './formSubmittedPopup';
 
 export const DetailedQuestions = () => {
     const questions = [//An array of questions built of the question and the possible answers
@@ -15,6 +16,8 @@ export const DetailedQuestions = () => {
             options: ["6", "5", "4"]
         }
     ];
+
+    const [openPopup, setOpenPopup] = useState<boolean>(false); //state for whether or not the popup should be on the screen
 
     const [numResponded, setNumResponded] = useState<number>(0); //state for how many questions have been responded to
 
@@ -80,11 +83,12 @@ export const DetailedQuestions = () => {
                 At the end of the assesment we will give you an idea of possible jobs
             </p>
             <div>
-                <Button onClick = {clearAnswer}>Clear</Button>{/* button that calls the clear answer function*/}
+            <Button className="Buttons" onClick = {clearAnswer}>Clear</Button>{/* button that calls the clear answer function*/}
                 <span>  </span>{/* below shows submit button if all answered and an answer all questions button otherwise */}
                 {allAnswered? 
-                <Button>Submit</Button>:
-                <Button disabled = {!allAnswered}>Answer all Questions</Button>}
+                <Button className="Buttons" onClick={()=>setOpenPopup(true)}>Submit</Button>: //button sets openPopup to tree when the form is submitted
+                <Button className="Buttons" disabled = {!allAnswered}>Answer all Questions</Button>}
+                {openPopup && <FormSubmittedPopup closePopup={()=>setOpenPopup(false)}/>} {/* displays FormSubmittedPopup component when openPopup is true*/}
             </div>
         </div>
     );
