@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import './App.css';
-import { Button, ProgressBar } from 'react-bootstrap';
+import { ProgressBar } from 'react-bootstrap';
 
 export interface QuestionsProp {
     questionsResponded: number;
