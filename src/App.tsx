@@ -2,11 +2,12 @@
 
 import React, { useState } from 'react';
 import './App.css';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Navbar } from 'react-bootstrap';
 import {HashRouter as Router, Routes, Route} from 'react-router-dom'
 import  Home  from "./Home";
 import { BasicQuestions } from './BasicQuestions';
 import { DetailedQuestions } from './DetailedQuestions';
+import { NavBar } from './NavBar';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -33,18 +34,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         Welcome to starterHelpi
+        <NavBar/>
       </header>
       <div className="Body">
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />}/> 
-            {
-              /*Using path="/" sets the default path to the Home page*/
-            }
+      <Routes>
+          <Route path="/" element={<Home />}/> 
+          {
+            /*Using path="/" sets the default path to the Home page*/
+          }
           <Route path="/BasicQuestions" element={<BasicQuestions />} />
           <Route path="/DetailedQuestions" element={<DetailedQuestions />} />
-          </Routes>
-        </Router>
+        </Routes>
       </div>
       <footer>
         <p>Team Members: Samantha Paez, Jackson Singley, Nolan Keefe, and Diego Quijada</p>

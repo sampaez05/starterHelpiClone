@@ -2,11 +2,13 @@
 import './App.css';
 import { Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
+import { NavBar } from './NavBar';
 
 const Home = () => {
     return (
         <div>
-            <header>Home Page</header>
+            <header>Home Page
+            </header>
             <div>
                 <Link to="/BasicQuestions"><Button className="Buttons">Basic Questions</Button></Link>
                 <br></br>
