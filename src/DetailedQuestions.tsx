@@ -73,7 +73,9 @@ export const DetailedQuestions = () => {
             <div>
                 <Button onClick = {clearAnswer}>Clear</Button>
                 <span>  </span>
-                <Button disabled = {!allAnswered}>Submit</Button>
+                {allAnswered?
+                <Button>Submit</Button>:
+                <Button disabled = {!allAnswered}>Answer all Questions</Button>}
             </div>
         </div>
     );
