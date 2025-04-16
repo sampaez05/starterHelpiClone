@@ -150,7 +150,7 @@ export const DetailedQuestions = () => {
                     //Runs through the questions array and sends info to question format
                     <MultipleChoiceQuestion 
                         key={index}
-                        question={q.question}
+                        question={q.questions}
                         options={q.options}
                         selected={questionData[index].answer}
                         setSelected={(a) => updateAnswer(index, a)}//changes on radio button click
