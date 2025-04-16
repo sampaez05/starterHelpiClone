@@ -22,12 +22,12 @@ export const BasicQuestions = () => {
         options: ["STEM","Arts","Business","Politics"]},
         {question: "Do you want to do more physical labor or mental work",
             options: ["I want to do mental work","I want to work with my hands","A good mix of both"]},
-            {question: "How much interaction do you want with consumers",
-                options: ["I love talking to people","Some interaction is okay","I will if I have to","I’d rather eat my own foot than talk to a stranger"]},
-                {question: "Do you prefer long-term employment or short-term contract work?",
-                    options: ["Long term is the way to go","I prefer contracted work","Either works"]},
-                    {question: "Would you like to be in a leadership position or be more boots on the ground doing the actual work",
-                        options: ["I prefer to help with the bigger picture","I prefer doing the day-to-day work","Maybe a bit of both"]},
+        {question: "How much interaction do you want with consumers",
+            options: ["I love talking to people","Some interaction is okay","I will if I have to","I’d rather eat my own foot than talk to a stranger"]},
+        {question: "Do you prefer long-term employment or short-term contract work?",
+            options: ["Long term is the way to go","I prefer contracted work","Either works"]},
+        {question: "Would you like to be in a leadership position or be more boots on the ground doing the actual work",
+            options: ["I prefer to help with the bigger picture","I prefer doing the day-to-day work","Maybe a bit of both"]},
       ];
     
     const [numResponded, setNumResponded] = useState<number>(0); //state for how many questions have been responded to
