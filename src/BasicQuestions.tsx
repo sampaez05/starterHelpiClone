@@ -1,10 +1,11 @@
 
 import './App.css';
-import { Button, Container, ProgressBar } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import {ProgBar} from './progressBar';
 import { useState } from 'react';
 import { MultipleChoiceQuestion } from './QuestionFormat';
 import { FormSubmittedPopup } from './formSubmittedPopup';
+import { NavBar } from './NavBar';
 
 export const BasicQuestions = () => {
     const questions = [
@@ -67,19 +68,18 @@ export const BasicQuestions = () => {
         setNumResponded(0); //resets the numResponded state to 0
     }
     return (
-        <div>
-            <header>
-                Basic Questions
+        <div className='App'>
+            <header className='App-header'>
+                Basic Question Assessment
+                <NavBar/>
                 <ProgBar questionsResponded={numResponded} numberOfQs={questions.length}/>
             </header>
-            <Container style={{
-                 border: '2px solid black',
-                 padding: '10px',
+            <Container className='Questions-body' style={{
+                 border: '0px solid black',
                  borderRadius: '5px',
-                 width: '200px',
-                textAlign: 'center'
+                textAlign: 'left',
+                position: 'relative',
             }}>
-                Basic Career assesment
                 {questions.map((q, index) => (
                     //Runs through the questions array and sends info to question format
                     <MultipleChoiceQuestion 
