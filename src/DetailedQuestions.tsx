@@ -4,6 +4,7 @@ import { MultipleChoiceQuestion } from './QuestionFormat';
 import { ProgBar } from './progressBar';
 import { useState } from 'react';
 import { FormSubmittedPopup } from './formSubmittedPopup';
+import { NavBar } from './NavBar';
 
 export const DetailedQuestions = () => {
     const questions = [ 
@@ -134,18 +135,16 @@ export const DetailedQuestions = () => {
     }
     return (
         <div>
-            <header>
-                Detailed Questions
+            <header className='App-header'>
+                Detailed Question Assessment
+                <NavBar/>
                 <ProgBar questionsResponded={numResponded} numberOfQs={questions.length}/>
             </header>
-            <Container style={{
-                 border: '2px solid black',
-                 padding: '10px',
+            <Container className='Questions-body' style={{
+                 border: '0px solid black',
                  borderRadius: '5px',
-                 width: '200px',
-                textAlign: 'center'
+                textAlign: 'left'
             }}>
-                Detailed Career assesment
                 {questions.map((q, index) => (
                     //Runs through the questions array and sends info to question format
                     <MultipleChoiceQuestion 
