@@ -16,17 +16,35 @@
 }
 
 .App-header {
-  padding-top: 10px;
   background-color: #333D51;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  position: fixed;
+  width: 100%;
   font-size: calc(10px + 2vmin);
   color: #D3AC2B;
   margin-bottom:10px;
   font-family: "Garamond", Times, serif;
   height:25vh;
+  z-index: 1000;
+  left:0;
+}
+
+.fixed-header {
+  padding-top: 25vh;
+  background-color: #333D51;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  font-size: calc(10px + 2vmin);
+  color: #D3AC2B;
+  margin-bottom:10px;
+  font-family: "Garamond", Times, serif;
+  height:25vh;
+  z-index: 900;
 }
 
 .App-footer {
@@ -66,9 +84,15 @@
   font-size: smaller;
 }
 
-.nav li{
+.nav ul {
   display: flex;
+  padding: 2px;
+  margin: 0px;
+}
+
+.nav li{
   list-style: none;
+  padding: 5px;
 }
 
 .nav a{
@@ -95,6 +119,11 @@
 .Buttons:disabled {
   background-color: #c9cbcf;
   color: black;
+}
+
+.Questions-body {
+  padding-top: 30vh;
+  padding-bottom: 30px;
 }
 
 .prog-bar .progress-bar{
