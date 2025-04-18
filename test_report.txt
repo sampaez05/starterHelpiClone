@@ -13,7 +13,7 @@ FAIL src/App.test.tsx
 
     [0m [90m 4 |[39m [36mimport[39m [32m'./App.css'[39m[33m;[39m
      [90m 5 |[39m [36mimport[39m { [33mButton[39m[33m,[39m [33mForm[39m } [36mfrom[39m [32m'react-bootstrap'[39m[33m;[39m
-    [31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m {[33mHashRouter[39m [36mas[39m [33mRouter[39m[33m,[39m [33mRoutes[39m[33m,[39m [33mRoute[39m} [36mfrom[39m [32m'react-router-dom'[39m
+    [31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m {[33mRoutes[39m[33m,[39m [33mRoute[39m} [36mfrom[39m [32m'react-router-dom'[39m
      [90m   |[39m [31m[1m^[22m[39m
      [90m 7 |[39m [36mimport[39m  [33mHome[39m  [36mfrom[39m [32m"./Home"[39m[33m;[39m
      [90m 8 |[39m [36mimport[39m { [33mBasicQuestions[39m } [36mfrom[39m [32m'./BasicQuestions'[39m[33m;[39m
@@ -27,22 +27,26 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
------------------------|---------|----------|---------|---------|-------------------
-File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
------------------------|---------|----------|---------|---------|-------------------
-All files              |       0 |        0 |       0 |       0 |                   
- AI-code.js            |       0 |        0 |       0 |       0 | 6-43              
- App.tsx               |       0 |        0 |       0 |       0 | 12-32             
- BasicQuestions.tsx    |       0 |      100 |       0 |       0 | 6-7               
- DetailedQuestions.tsx |       0 |      100 |       0 |       0 | 6-7               
- Home.tsx              |       0 |      100 |       0 |       0 | 6-7               
- index.tsx             |       0 |      100 |     100 |       0 | 7-19              
- reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
------------------------|---------|----------|---------|---------|-------------------
+------------------------|---------|----------|---------|---------|-------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------|---------|----------|---------|---------|-------------------
+All files               |       0 |        0 |       0 |       0 |                   
+ AI-code.js             |       0 |        0 |       0 |       0 | 6-43              
+ App.tsx                |       0 |        0 |       0 |       0 | 13-33             
+ BasicQuestions.tsx     |       0 |        0 |       0 |       0 | 10-104            
+ DetailedQuestions.tsx  |       0 |        0 |       0 |       0 | 9-169             
+ Home.tsx               |       0 |      100 |       0 |       0 | 5-6               
+ NavBar.tsx             |       0 |      100 |       0 |       0 | 4-5               
+ QuestionFormat.tsx     |       0 |      100 |       0 |       0 | 15-28             
+ formSubmittedPopup.tsx |       0 |      100 |       0 |       0 | 10-12             
+ index.tsx              |       0 |      100 |     100 |       0 | 8-22              
+ progressBar.tsx        |       0 |      100 |       0 |       0 | 10-11             
+ reportWebVitals.ts     |       0 |        0 |       0 |       0 | 3-10              
+------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        2.875 s
+Time:        3.031 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
