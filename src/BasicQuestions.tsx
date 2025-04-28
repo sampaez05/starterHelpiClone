@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { MultipleChoiceQuestion } from './QuestionFormat';
 import { FormSubmittedPopup } from './formSubmittedPopup';
 import { NavBar } from './NavBar';
+import { chatSend } from './AI-code';
 
 export const BasicQuestions = () => {
     const questions = [
@@ -34,7 +35,6 @@ export const BasicQuestions = () => {
     const [numResponded, setNumResponded] = useState<number>(0); //state for how many questions have been responded to
     
     const [openPopup, setOpenPopup] = useState<boolean>(false); //state for whether or not the popup should be on the screen
-
       // Set up state for answers and responses dynamically
     const [questionData, setQuestionData] = useState(
         questions.map(() => ({//sets answer to empty and response state false
@@ -42,8 +42,20 @@ export const BasicQuestions = () => {
             responded: false
         }))
     );
+    const [answerData, setAnswerData] = useState(
+        questions.map((q,index) => ({//sets answer to empty and response state false
+        question: q.question,
+        answer: ""
+    })));
     const allAnswered = questionData.every(q => q.responded);//A value that checks for if all questions on page answered
+    const sendGPTmessage = ()=>{
+        let message = "This is the latest profile for you to evaluate. The questions are presented in order, give your evaluation of compatible jobs or professions based on these answers: ";
+        for(let i = 0;i<10;i++){
+        message += "\nquestion: " + answerData[i].question + "\nanswer: " + answerData[i].answer;
+        }
+        chatSend(message);
 
+    }
     const updateAnswer = (index: number, answer: string) => {//Updates the answer and sets the responded state to true
         const updated = [...questionData];
         updated[index] = {
@@ -51,7 +63,10 @@ export const BasicQuestions = () => {
             responded: true
         };
         setQuestionData(updated);//sets the question data to the new
-
+        const updatedAnswers = [...answerData];
+        updatedAnswers[index].answer = answer;
+        setAnswerData(updatedAnswers);
+        console.log(answerData);
         //finds how many questions have been responded to and set the proper state to this value
         const respondedQuestions = updated.filter(q=>q.responded)
         console.log(respondedQuestions.length);
@@ -98,8 +113,8 @@ export const BasicQuestions = () => {
             <div>
                 <Button className="Buttons" onClick = {clearAnswer}>Clear</Button>{/* button that calls the clear answer function*/}
                 <span>  </span>{/* below shows submit button if all answered and an answer all questions button otherwise */}
-                {allAnswered? 
-                <Button className="Buttons" onClick={()=>setOpenPopup(true)}>Submit</Button>: //button sets openPopup to tree when the form is submitted
+                    {allAnswered? 
+                <Button className="Buttons" onClick={()=>sendGPTmessage()}>Submit</Button>: //button sets openPopup to tree when the form is submitted
                 <Button className="Buttons" disabled = {!allAnswered}>Answer all Questions</Button>}
                 {openPopup && <FormSubmittedPopup closePopup={()=>setOpenPopup(false)}/>} {/* displays FormSubmittedPopup component when openPopup is true*/}
             </div>
