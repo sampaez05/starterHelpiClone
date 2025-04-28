@@ -5,3 +5,10 @@ import { useState } from 'react';
 import { MultipleChoiceQuestion } from './QuestionFormat';
 import { FormSubmittedPopup } from './formSubmittedPopup';
 import { NavBar } from './NavBar';
+export const Results = () => {
+    return (
+        <div>
+        <Container>EGGS</Container>
+        </div>
+    );
+}
