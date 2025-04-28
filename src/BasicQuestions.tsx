@@ -1,4 +1,3 @@
-
 import './App.css';
 import { Button, Container } from 'react-bootstrap';
 import {ProgBar} from './progressBar';
