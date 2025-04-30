@@ -1,7 +1,6 @@
 import './App.css';
 import { Container } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
-import { NavBar } from './NavBar';
 import { chatSend } from './AI-code';
 
 export const Results = () => {
