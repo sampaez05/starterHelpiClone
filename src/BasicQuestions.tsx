@@ -81,6 +81,10 @@ export const BasicQuestions = () => {
         );
         setNumResponded(0); //resets the numResponded state to 0
     }
+    const handleSubmitClick = ()=>{
+        sendGPTmessage();
+        setOpenPopup(true);
+    };
     return (
         <div className='App'>
             <header className='App-header'>
@@ -91,8 +95,8 @@ export const BasicQuestions = () => {
             <Container className='Questions-body' style={{
                  border: '0px solid black',
                  borderRadius: '5px',
-                textAlign: 'left',
-                position: 'relative',
+                 textAlign: 'left',
+                 position: 'relative',
             }}>
                 {questions.map((q, index) => (
                     //Runs through the questions array and sends info to question format
@@ -113,7 +117,7 @@ export const BasicQuestions = () => {
                 <Button className="Buttons" onClick = {clearAnswer}>Clear</Button>{/* button that calls the clear answer function*/}
                 <span>  </span>{/* below shows submit button if all answered and an answer all questions button otherwise */}
                     {allAnswered? 
-                <Button className="Buttons" onClick={()=>sendGPTmessage()}>Submit</Button>: //button sets openPopup to tree when the form is submitted
+                <Button className="Buttons" onClick={()=>handleSubmitClick()}>Submit</Button>: //button sets openPopup to tree when the form is submitted
                 <Button className="Buttons" disabled = {!allAnswered}>Answer all Questions</Button>}
                 {openPopup && <FormSubmittedPopup closePopup={()=>setOpenPopup(false)}/>} {/* displays FormSubmittedPopup component when openPopup is true*/}
             </div>
