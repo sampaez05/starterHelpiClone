@@ -5,6 +5,7 @@ import { ProgBar } from './progressBar';
 import { useState } from 'react';
 import { FormSubmittedPopup } from './formSubmittedPopup';
 import { NavBar } from './NavBar';
+import {chatSend} from './AI-code';
 
 export const DetailedQuestions = () => {
     const questions = [ 
@@ -97,9 +98,9 @@ export const DetailedQuestions = () => {
         }
     ];
 
-    const [openPopup, setOpenPopup] = useState<boolean>(false); //state for whether or not the popup should be on the screen
-
     const [numResponded, setNumResponded] = useState<number>(0); //state for how many questions have been responded to
+
+    const [openPopup, setOpenPopup] = useState<boolean>(false); //state for whether or not the popup should be on the screen
 
     // Set up state for answers and responses dynamically
     const [questionData, setQuestionData] = useState(
@@ -108,8 +109,20 @@ export const DetailedQuestions = () => {
             responded: false
         }))
     );
+    const [answerData, setAnswerData] = useState(
+        questions.map((q,index) => ({//sets answer to empty and response state false
+        question: q.questions,
+        answer: ""
+    })));
     const allAnswered = questionData.every(q => q.responded);//A value that checks for if all questions on page answered
-
+    const sendGPTmessage = ()=>{
+            let message = "This is the latest profile for you to evaluate. The questions are presented in order, give your evaluation of compatible jobs or professions based on these answers: ";
+            for(let i = 0;i<10;i++){
+            message += "\nquestion: " + answerData[i].question + "\nanswer: " + answerData[i].answer;
+            }
+            chatSend(message);
+    
+        }
     const updateAnswer = (index: number, answer: string) => {//Updates the answer and sets the responded state to true
         const updated = [...questionData];
         updated[index] = {
@@ -117,7 +130,10 @@ export const DetailedQuestions = () => {
             responded: true
         };
         setQuestionData(updated);//sets the question data to the new
-
+        const updatedAnswers = [...answerData];
+        updatedAnswers[index].answer = answer;
+        setAnswerData(updatedAnswers);
+        console.log(answerData);
         //finds how many questions have been responded to and set the proper state to this value
         const respondedQuestions = updated.filter(q=>q.responded)
         console.log(respondedQuestions.length);
@@ -133,6 +149,10 @@ export const DetailedQuestions = () => {
 
         setNumResponded(0); //resets the numResponded state to 0
     }
+    const handleSubmitClick = ()=>{
+        sendGPTmessage();
+        setOpenPopup(true);
+    };
     return (
         <div>
             <header className='App-header'>
@@ -143,7 +163,8 @@ export const DetailedQuestions = () => {
             <Container className='Questions-body' style={{
                  border: '0px solid black',
                  borderRadius: '5px',
-                textAlign: 'left'
+                 textAlign: 'left',
+                 position: 'relative',
             }}>
                 {questions.map((q, index) => (
                     //Runs through the questions array and sends info to question format
@@ -164,7 +185,7 @@ export const DetailedQuestions = () => {
             <Button className="Buttons" onClick = {clearAnswer}>Clear</Button>{/* button that calls the clear answer function*/}
                 <span>  </span>{/* below shows submit button if all answered and an answer all questions button otherwise */}
                 {allAnswered? 
-                <Button className="Buttons" onClick={()=>setOpenPopup(true)}>Submit</Button>: //button sets openPopup to tree when the form is submitted
+                <Button className="Buttons" onClick={()=>handleSubmitClick()}>Submit</Button>: //button sets openPopup to tree when the form is submitted
                 <Button className="Buttons" disabled = {!allAnswered}>Answer all Questions</Button>}
                 {openPopup && <FormSubmittedPopup closePopup={()=>setOpenPopup(false)}/>} {/* displays FormSubmittedPopup component when openPopup is true*/}
             </div>

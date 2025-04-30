@@ -34,7 +34,8 @@ export async function chatSend(message) {
 
       const assistantMessage = response.choices[0].message.content;
       console.log(`Assistant: ${assistantMessage}`);
-      messages.push({ role: 'assistant', content: assistantMessage });
+      return assistantMessage.toString();
+      //messages.push({ role: 'assistant', content: assistantMessage }); //this line just pushes it to the history
     } catch (err) {
       console.error('Error calling OpenAI API:', err);
     }
