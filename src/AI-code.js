@@ -15,7 +15,7 @@ if (prevKey !== null) {
 
 // Initialize OpenAI client
 const openai = new OpenAI({
-  apiKey: localStorage.getItem(keyData).replace(/"/g,''),dangerouslyAllowBrowser: true
+  apiKey: keyData.replace(/"/g,''),dangerouslyAllowBrowser: true
 });
 
 // Keep conversation context in an array
