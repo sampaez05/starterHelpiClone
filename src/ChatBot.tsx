@@ -38,14 +38,14 @@ export function ChatBot() {
         const gptResponse = await chatSend(chatMessage); // provide actual message if needed
         if (gptResponse) {
             //remove the "ChatGPT is typing..." message since the response is ready
-            const removedDots = messages.pop();
+            messages.pop();
             setMessages([...messages]);
             //add ChatGPT's response to the message array so it can be displayed
             const aiMessage:Message = {message:gptResponse, sender:"ChatGPT"} //makes a message and sets the message's sender to ChatGPT
             setMessages([...newMessages, aiMessage]); //adds the user's message to the array of messages so that it can be displayed
         } else {
             //remove the "ChatGPT is typing..." message since the response is ready
-            const removedDots = messages.pop();
+            messages.pop();
             setMessages([...messages]);
             //adds an error message to the array of messages to be displayed
             setMessages([...newMessages, {message:"Something went wrong. Try again later.", sender:"ChatGPT"}]);
