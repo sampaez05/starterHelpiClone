@@ -8,6 +8,7 @@ import  Home  from "./Home";
 import { BasicQuestions } from './BasicQuestions';
 import { DetailedQuestions } from './DetailedQuestions';
 import { NavBar } from './NavBar';
+import { Results } from './Results';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -44,6 +45,7 @@ function App() {
           }
           <Route path="/BasicQuestions" element={<BasicQuestions />} />
           <Route path="/DetailedQuestions" element={<DetailedQuestions />} />
+          <Route path="/Results" element={<Results />} />
         </Routes>
       </div>
       <footer>

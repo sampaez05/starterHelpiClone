@@ -1,3 +1,4 @@
+import { JSX } from 'react';
 import './App.css';
 import { ProgressBar } from 'react-bootstrap';
 
