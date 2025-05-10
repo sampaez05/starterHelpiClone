@@ -5,9 +5,17 @@ import OpenAI from 'openai';
 // Initialize prompt-sync
 //const prompt = promptSync({ sigint: true });
 
+//local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
+let keyData = "";
+const saveKeyData = "MYKEY";
+const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+if (prevKey !== null) {
+  keyData = JSON.parse(prevKey);
+}
+
 // Initialize OpenAI client
 const openai = new OpenAI({
-  apiKey: localStorage.getItem("MYKEY").replace(/"/g,''),dangerouslyAllowBrowser: true
+  apiKey: keyData.replace(/"/g,''),dangerouslyAllowBrowser: true
 });
 
 // Keep conversation context in an array
