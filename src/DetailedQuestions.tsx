@@ -185,7 +185,7 @@ export const DetailedQuestions = () => {
             <Button className="Buttons" onClick = {clearAnswer}>Clear</Button>{/* button that calls the clear answer function*/}
                 <span>  </span>{/* below shows submit button if all answered and an answer all questions button otherwise */}
                 {allAnswered? 
-                <Button className="Buttons" onClick={()=>handleSubmitClick()}>Submit</Button>: //button sets openPopup to tree when the form is submitted
+                <Button className="Buttons" onClick={()=>handleSubmitClick()}>Submit</Button>: //button calls handleSubmitClick calling ChatGPT and making popup show
                 <Button className="Buttons" disabled = {!allAnswered}>Answer all Questions</Button>}
                 {openPopup && <FormSubmittedPopup closePopup={()=>setOpenPopup(false)}/>} {/* displays FormSubmittedPopup component when openPopup is true*/}
             </div>
