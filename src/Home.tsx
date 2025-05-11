@@ -9,9 +9,20 @@ const Home = () => {
     return (
         <div className='App'>
             <div className='Body'>
-                <Link to="/BasicQuestions"><Button className="Buttons">Basic Questions</Button></Link>
+                <Link to="/BasicQuestions"><Button className="Buttons">
+                    Basic Questions
+                    <p className='description'>The Basic Career assesment asks a few simple questions, please select the answer you most feel fits.
+                    At the end of the assesment we will give you a general idea of possible jobs</p>
+                    </Button>
+                </Link>
                 <br></br>
-                <Link to="/DetailedQuestions"><Button className="Buttons">Detailed Questions</Button></Link>
+                <Link to="/DetailedQuestions"><Button className="Buttons">
+                    Detailed Questions
+                    <p className='description'>The Detailed Career assesment asks a few detailed questions, please select the answer you most feel fits.
+                    At the end of the assesment we will give you an idea of possible jobs
+                    </p>
+                    </Button>
+                </Link>
             </div>
             <div>
                 {/**Below displays a button to interact with the chatBot
@@ -25,7 +36,7 @@ const Home = () => {
                     :
                     <Button className="Buttons" onClick={(e)=>setShowChatBot(!showChatBot)}>Open ChatBot</Button>
                 }
-                {showChatBot && <ChatBot/>}
+                {showChatBot && <ChatBot closePopup={()=>setShowChatBot(false)}/>}
             </div>
         </div>
     );

@@ -99,7 +99,7 @@ export const BasicQuestions = () => {
                  position: 'relative',
             }}>
                 {questions.map((q, index) => (
-                    //Runs through the questions array and sends info to question format
+                    //Runs through the questions array and sends info to question format 
                     <MultipleChoiceQuestion 
                         key={index}
                         question={q.question}
@@ -110,9 +110,6 @@ export const BasicQuestions = () => {
                 ))}
 
             </Container>
-            <p>The Basic Career assesment asks a few simple questions, please select the answer you most feel fits.
-                At the end of the assesment we will give you a general idea of possible jobs
-            </p>
             <div>
                 <Button className="Buttons" onClick = {clearAnswer}>Clear</Button>{/* button that calls the clear answer function*/}
                 <span>  </span>{/* below shows submit button if all answered and an answer all questions button otherwise */}
