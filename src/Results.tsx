@@ -2,13 +2,14 @@ import './App.css';
 import { Container } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { chatSend } from './AI-code';
+import { getDynamicContent } from './StoreMessage';
 
 export const Results = () => {
   const [response, setResponse] = useState<string>('Loading your results...');
 
   useEffect(() => {
     const getResults = async () => {
-      const gptResponse = await chatSend("Give me a career suggestion based on my answers."); // provide actual message if needed
+      const gptResponse = await chatSend(getDynamicContent()); // provide actual message if needed
       if (gptResponse) {
         setResponse(gptResponse);
       } else {
