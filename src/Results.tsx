@@ -3,7 +3,8 @@ import { Container } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { chatSend } from './AI-code';
 import { getDynamicContent } from './StoreMessage';
-
+import ReactMarkdown from 'react-markdown'
+import rehypeSanitize from 'rehype-sanitize'
 export const Results = () => {
   const [response, setResponse] = useState<string>('Loading your results...');
 
@@ -21,9 +22,11 @@ export const Results = () => {
 
   return (
     <div>
-      <Container>
+      <Container style={{ paddingTop: '12rem' }}>
         <h2>Career Suggestions</h2>
-        <p>{response}</p>
+        <ReactMarkdown rehypePlugins={[rehypeSanitize]}>
+        {response}
+      </ReactMarkdown>
       </Container>
     </div>
   );
