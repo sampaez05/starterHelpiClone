@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { MultipleChoiceQuestion } from './QuestionFormat';
 import { FormSubmittedPopup } from './formSubmittedPopup';
 import { NavBar } from './NavBar';
-import { chatSend } from './AI-code';
 import { setDynamicContent } from './StoreMessage';
 
 export const BasicQuestions = () => {
