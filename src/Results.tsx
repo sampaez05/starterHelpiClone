@@ -53,7 +53,6 @@ export const Results = () => {
         <ReactMarkdown rehypePlugins={[rehypeSanitize]}>
         {response}
       </ReactMarkdown>
-        <p>{response}</p>{/* prints response as it changes*/}
         <button onClick={downloadAsPDF}>Download PDF</button>
       </Container>
     </div>
