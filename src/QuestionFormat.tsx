@@ -30,6 +30,7 @@ export function MultipleChoiceQuestion({
                             style={{ marginRight: "5px" }}//just small visual
                         />
                         {option}
+                        
                     </label>
                 ))}
             </Form.Group>
