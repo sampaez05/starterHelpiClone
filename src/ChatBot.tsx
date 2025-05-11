@@ -9,9 +9,12 @@ type Message = {
     sender: "ChatGPT" | "User";
 };
 
-export function ChatBot() {
+export interface PopupProp {
+    closePopup:()=> void; //this function allows user to close the popup screen
+}
+
+export function ChatBot({closePopup}:PopupProp) {
     const [input, setInput] = useState('');
-    
     const [messages, setMessages] = useState<Message[]>([
         {message:"Hi there! Welcome to CareerHelpi!", sender:"ChatGPT"}
     ]); //messages is a list contains a series of messages that will display on the screen and a sender
@@ -29,7 +32,7 @@ export function ChatBot() {
         setMessages([...newMessages,{message:"ChatGPT is typing...", sender:"ChatGPT"}]); //displays while ChatGPT is loading a response
 
         //send the messages to chatGPT to be read and responded to 
-        let chatMessage = "This user of this career quiz website wants to chat with you. The messages are presented in order. Respond to the user based on the following messages: ";
+        let chatMessage = "This user of this career quiz website wants to chat with you. The website has a basic question page and a detailed question page. The messages are presented in order. Respond to the user based on the following messages: ";
         for(let i = 0;i<newMessages.length;i++){
             chatMessage += "\nmessage: " + newMessages[i].message + "\nsender: " + newMessages[i].sender;
         }
@@ -53,9 +56,10 @@ export function ChatBot() {
       };
 
     return (
-        <div>
+        <div className='chat-popup'>
             <Container className='chat-box'>
                 <div className="chats">
+                <Button className="popup-button" onClick={()=>closePopup()}>X</Button>
                     {/** the bottom function displays all the messages in the messages array on the screen
                      * the sender of each message will determine the alignment of the message and its color
                      */}
@@ -63,7 +67,7 @@ export function ChatBot() {
                         return <div className={message.sender}>{message.message}</div>
                     })}
                 </div>
-                <FormGroup controlId="user-input">
+                <FormGroup className="textBox" controlId="user-input">
                     <input className='userName' value={input} onChange={updateInput}></input>
                     <Button className="Buttons" onClick={async (e)=>{e.preventDefault(); await sendUserMessage(input)}}>Enter</Button>
                 </FormGroup>
