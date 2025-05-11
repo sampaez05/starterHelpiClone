@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { MultipleChoiceQuestion } from './QuestionFormat';
 import { FormSubmittedPopup } from './formSubmittedPopup';
 import { NavBar } from './NavBar';
+import { chatSend } from './AI-code';
 import { setDynamicContent } from './StoreMessage';
 
 export const BasicQuestions = () => {
@@ -52,7 +53,7 @@ export const BasicQuestions = () => {
         for(let i = 0;i<10;i++){
         message += "\nquestion: " + answerData[i].question + "\nanswer: " + answerData[i].answer;
         }
-        setDynamicContent(message);
+       setDynamicContent(message);
 
     }
     const updateAnswer = (index: number, answer: string) => {//Updates the answer and sets the responded state to true
