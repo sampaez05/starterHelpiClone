@@ -16,11 +16,19 @@ export const Results = () => {
 
     const pageWidth = doc.internal.pageSize.getWidth();// gets width of the doc
     const maxLineWidth = pageWidth - 20;//Gets the Line width and subracts 20 for margins
-    const lines = doc.splitTextToSize("Career Suggestions\n"+response,maxLineWidth);//Makes the words/lines fit on page
+    const lines = doc.splitTextToSize(response,maxLineWidth);//Makes the words/lines fit on page
+
+    doc.setFont("helvetica", "bold");//sets the doc font duuuh
+    doc.setFontSize(18);//sets the size for the header
+    doc.text("Career Suggestions", 10, 10);
     
     const pageHeight = doc.internal.pageSize.getHeight();//gets page height
     let cursorY:number = 10;//Keeps track of where the text is to prevent it from going off page
     const lineHeight = 10;//sets height of lines
+
+    cursorY += 15; // add space below header
+    doc.setFont("helvetica", "normal");//sets font for body text
+    doc.setFontSize(12);//sets the font size for body text
 
     lines.forEach((line: string | string[]) => {
       if (cursorY + lineHeight > pageHeight - 10) {//height of line and space for page must be greater than the page height - margin
