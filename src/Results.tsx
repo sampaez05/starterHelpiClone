@@ -48,7 +48,7 @@ export const Results = () => {
 
   return (
     <div>
-      <Container style={{ paddingTop: '12rem' }}>
+      <Container style={{ paddingTop: '15rem' }}>
         <h2>Career Suggestions</h2>
         <ReactMarkdown rehypePlugins={[rehypeSanitize]}>
         {response}
