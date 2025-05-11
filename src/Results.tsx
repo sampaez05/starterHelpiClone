@@ -16,7 +16,7 @@ export const Results = () => {
 
     const pageWidth = doc.internal.pageSize.getWidth();// gets width of the doc
     const maxLineWidth = pageWidth - 20;//Gets the Line width and subracts 20 for margins
-    const lines = doc.splitTextToSize(response,maxLineWidth);//Makes the words/lines fit on page
+    const lines = doc.splitTextToSize("Career Suggestions\n"+response,maxLineWidth);//Makes the words/lines fit on page
     
     const pageHeight = doc.internal.pageSize.getHeight();//gets page height
     let cursorY:number = 10;//Keeps track of where the text is to prevent it from going off page
