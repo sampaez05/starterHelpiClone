@@ -32,7 +32,7 @@ export async function chatSend(message) {
       model:    'gpt-4o',
       messages: payload
     });
-    console.log('Assistant:', resp.choices[0].message.content);
+    return resp.choices[0].message.content;
   } catch (err) {
     console.error('Error calling OpenAI API:', err);
   }
