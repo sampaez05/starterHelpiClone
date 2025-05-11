@@ -31,7 +31,7 @@ FAIL src/App.test.tsx
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------|---------|----------|---------|---------|-------------------
 All files               |       0 |        0 |       0 |       0 |                   
- AI-code.js             |       0 |        0 |       0 |       0 | 9-37              
+ AI-code.js             |       0 |        0 |       0 |       0 | 9-38              
  App.tsx                |       0 |        0 |       0 |       0 | 14-34             
  BasicQuestions.tsx     |       0 |        0 |       0 |       0 | 10-122            
  ChatBot.tsx            |       0 |        0 |       0 |       0 | 13-68             
@@ -39,7 +39,8 @@ All files               |       0 |        0 |       0 |       0 |
  Home.tsx               |       0 |        0 |       0 |       0 | 7-26              
  NavBar.tsx             |       0 |      100 |       0 |       0 | 4-5               
  QuestionFormat.tsx     |       0 |      100 |       0 |       0 | 15-28             
- Results.tsx            |       0 |        0 |       0 |       0 | 6-21              
+ Results.tsx            |       0 |        0 |       0 |       0 | 7-22              
+ StoreMessage.js        |       0 |      100 |       0 |       0 | 1-8               
  formSubmittedPopup.tsx |       0 |      100 |       0 |       0 | 11-13             
  index.tsx              |       0 |      100 |     100 |       0 | 8-22              
  progressBar.tsx        |       0 |      100 |       0 |       0 | 11-12             
@@ -48,7 +49,7 @@ All files               |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       0 total
 Snapshots:   0 total
-Time:        3.154 s
+Time:        3.217 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
