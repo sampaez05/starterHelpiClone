@@ -1,5 +1,6 @@
 
 import { Form } from "react-bootstrap";
+import './App.css';
 
 export function MultipleChoiceQuestion({
     options,
@@ -18,6 +19,7 @@ export function MultipleChoiceQuestion({
             <Form.Group controlId="multipleChoiceQuestions">
                 {options.map((option) => (//runs through information and makes the question
                     <label
+                        className="options"
                         key={option}//which object is it
                     >
                         <input
@@ -30,6 +32,7 @@ export function MultipleChoiceQuestion({
                             style={{ marginRight: "5px" }}//just small visual
                         />
                         {option}
+                        
                     </label>
                 ))}
             </Form.Group>

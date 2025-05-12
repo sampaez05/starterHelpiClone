@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Welcome to starterHelpi
+        Teenage Mutant Career Options
         <NavBar/>
       </header>
       <div className="Body">

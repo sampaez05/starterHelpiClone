@@ -23,7 +23,7 @@ const openai = new OpenAI({
 export async function chatSend(message) {
   //this defines the call made to the API, with both the instructions to the system and the actual message to the user
   const payload = [
-    { role: 'system',  content: 'Just be helpful and straightforward, doing your best to avoid talking about potentially controversial topics' },
+    { role: 'system',  content: 'Just be helpful and straightforward, doing your best to avoid talking about potentially controversial topics, Make sure to include salary ranges for each position and degree needed' },
     { role: 'user',    content: message }
   ];
 
