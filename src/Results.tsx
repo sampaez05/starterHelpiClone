@@ -19,7 +19,8 @@ export const Results = () => {
     };
     getResults();
   }, []);
-
+  
+  //the ReactMarkdown helps make the response from ChatGPT prettier
   return (
     <div>
       <Container style={{ paddingTop: '12rem' }}>

@@ -18,11 +18,10 @@ const openai = new OpenAI({
   apiKey: keyData.replace(/"/g,''),dangerouslyAllowBrowser: true
 });
 
-// Keep conversation context in an array
 
-
+//this code is a singular serve and return the openAI API, the chat history is not saved so as to not pollute potential future messages
 export async function chatSend(message) {
-  console.log(message);
+  //this defines the call made to the API, with both the instructions to the system and the actual message to the user
   const payload = [
     { role: 'system',  content: 'Just be helpful and straightforward, doing your best to avoid talking about potentially controversial topics' },
     { role: 'user',    content: message }
@@ -33,6 +32,7 @@ export async function chatSend(message) {
       model:    'gpt-4o',
       messages: payload
     });
+    //this returns the actual content of the message to be used
     return resp.choices[0].message.content;
   } catch (err) {
     console.error('Error calling OpenAI API:', err);
